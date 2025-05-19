@@ -23,7 +23,7 @@ After installation, restart your terminal.
 
 ### 2: Clone the Repository
 ```bash
-git clone https://github.com/seamus-parker/seal.git
+git clone https://github.com/seamus-parker/seal-identification.git
 cd seal
 ````
 
