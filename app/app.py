@@ -16,7 +16,7 @@ import zipfile
 if not os.path.exists("VIT"):
     gdown.download_folder("https://drive.google.com/drive/folders/1rPSmx28DGFKN-lAN2gTosglsZigJoSzZ?usp=drive_link", output="VIT", quiet=False, use_cookies=False)
 MODEL_DIR = "VIT"
-PROCESSOR_DIR = "saved_processor"
+PROCESSOR_DIR = "VIT/saved_processor"
 
 if "saved_crops_dir" not in st.session_state:
     st.session_state.saved_crops_dir = tempfile.mkdtemp()
