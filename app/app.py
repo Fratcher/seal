@@ -191,8 +191,8 @@ if uploaded_files:
         if st.session_state.compare > 0:
 
             selected_label = str(int(predictions[st.session_state.compare-1]['label']))
-            train_folder = Path(f"seal_imgs/{selected_label}/train")
-            dev_folder = Path(f"seal_imgs/{selected_label}/dev")
+            train_folder = Path(f"app/seal_imgs/{selected_label}/train")
+            dev_folder = Path(f"app/seal_imgs/{selected_label}/dev")
 
             train_files = list(train_folder.glob("*"))
             dev_files = list(dev_folder.glob("*"))
