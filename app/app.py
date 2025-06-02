@@ -16,8 +16,12 @@ from pathlib import Path
 # Setup constants
 if not os.path.exists("VIT"):
     gdown.download_folder("https://drive.google.com/drive/folders/1rPSmx28DGFKN-lAN2gTosglsZigJoSzZ?usp=drive_link", output="VIT", quiet=False, use_cookies=False)
+    
 MODEL_DIR = "VIT"
 PROCESSOR_DIR = "VIT/saved_processor"
+
+OWL_PROCESSOR = "VIT/owlvit_processor"
+OWL_MODEL = "VIT/owlvit_model"
 
 if "saved_crops_dir" not in st.session_state:
     st.session_state.saved_crops_dir = tempfile.mkdtemp()
@@ -32,8 +36,8 @@ def load_owlvit():
     arguments: None
     returns: processor, model
     """
-    processor = OwlViTProcessor.from_pretrained("google/owlvit-base-patch32")
-    model = OwlViTForObjectDetection.from_pretrained("google/owlvit-base-patch32")
+    processor = OwlViTProcessor.from_pretrained(OWL_PROCESSOR)
+    model = OwlViTForObjectDetection.from_pretrained(OWL_MODEL)
     return processor, model
 
 def get_recommended_crop(image: Image.Image, text="harbor seal's head"):
