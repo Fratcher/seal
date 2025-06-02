@@ -277,10 +277,5 @@ if st.session_state.saved_files:
             mime="application/zip"
         )
 
-@atexit.register
-def cleanup_temp_dir():
-    if "saved_crops_dir" in st.session_state:
-        shutil.rmtree(st.session_state.saved_crops_dir, ignore_errors=True)
-
 
 
