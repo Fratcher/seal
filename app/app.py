@@ -3,7 +3,6 @@ import gdown
 from PIL import Image
 from transformers import pipeline, ViTImageProcessor, ViTForImageClassification
 import torch
-import os
 from streamlit_cropper import st_cropper
 from transformers import OwlViTProcessor, OwlViTForObjectDetection
 import atexit
@@ -11,6 +10,9 @@ import tempfile
 import shutil
 import zipfile
 from pathlib import Path
+import os
+
+os.environ["STREAMLIT_WATCHER_TYPE"] = "none"
 
 
 # Setup constants
